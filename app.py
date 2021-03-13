@@ -51,6 +51,17 @@ def display_all():
     #render template showing messages
     return render_template('all.html', messages=messages)
 
+@app.route('/display', methods=['POST'])
+def display():
+    #get posted form data using name assigned in HTML
+    display = request.form['message']
+
+    #display message on Sense HAT
+    sense.show_message(display)
+
+    #display success message to sending user 
+    return render_template('sent.html', message=display, name='you')
+
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0')
