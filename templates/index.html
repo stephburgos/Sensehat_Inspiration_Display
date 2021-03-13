@@ -9,8 +9,12 @@
 <body>
     <h1>Send me an inspirational message</h1>
     <form action="/send" method="post">
-        <input type="text" name="message">  
+        <input type="text" name="message" placeholder="Message"> 
+        <p>From:</p>
+        <input type="text" name="name" placeholder="Name">  
         <input type="submit" value="Send" /> 
     </form> 
+
+    <a href="/all">View all messages</a>
 </body>
 </html>
